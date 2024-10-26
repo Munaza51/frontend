@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Dashboard from './pages/Dashboard';
+import CompaniesPage from './pages/CompaniesPage';
+import DepartmentsPage from './pages/DepartmentsPage';
+import SpecializationsPage from './pages/SpecializationsPage';
+import ColleaguesPage from './pages/ColleaguesPage';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/companies" element={<CompaniesPage />} />
+          <Route path="/departments" element={<DepartmentsPage />} />
+          <Route path="/specializations" element={<SpecializationsPage />} />
+          <Route path="/colleagues" element={<ColleaguesPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
-}
+};
 
 export default App;
