@@ -9,6 +9,7 @@ interface SpecializationSelectProps {
 const SpecializationSelect: React.FC<SpecializationSelectProps> = ({ specializations, selectedSpecializationId, onChange }) => {
   return (
     <select
+    className="select-box select-container" // Apply the class for styling
       value={selectedSpecializationId || ''}
       onChange={(e) => onChange(Number(e.target.value))}
     >

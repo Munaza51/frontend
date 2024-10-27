@@ -47,6 +47,7 @@ const SpecializationForm: React.FC<SpecializationFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className="centered-container">
       <input
         type="text"
         value={name}
@@ -55,6 +56,7 @@ const SpecializationForm: React.FC<SpecializationFormProps> = ({
         required
       />
       <button type="submit">{existingSpecialization ? 'Update' : 'Create'} Specialization</button>
+      </div>
     </form>
   );
 };

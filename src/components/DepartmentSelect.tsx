@@ -9,6 +9,7 @@ interface DepartmentSelectProps {
 const DepartmentSelect: React.FC<DepartmentSelectProps> = ({ departments, selectedDepartmentId, onChange }) => {
   return (
     <select
+    className="select-box select-container" // Apply the class for styling
       value={selectedDepartmentId || ''}
       onChange={(e) => onChange(Number(e.target.value))}
     >

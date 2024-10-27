@@ -59,6 +59,7 @@ const ColleagueForm: React.FC<ColleagueFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className="centered-container">
       <input
         type="text"
         value={name}
@@ -81,6 +82,7 @@ const ColleagueForm: React.FC<ColleagueFormProps> = ({
         required
       />
       <button type="submit">{existingColleague ? 'Update' : 'Create'} Colleague</button>
+      </div>
     </form>
   );
 };

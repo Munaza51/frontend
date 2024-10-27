@@ -36,8 +36,10 @@ const DepartmentForm: React.FC<DepartmentFormProps> = ({ onSave, existingDepartm
     }
   };
 
+  
   return (
     <form onSubmit={handleSubmit}>
+      <div className="centered-container">
       <input
         type="text"
         value={name}
@@ -46,6 +48,7 @@ const DepartmentForm: React.FC<DepartmentFormProps> = ({ onSave, existingDepartm
         required
       />
       <button type="submit">{existingDepartment ? 'Update' : 'Create'} Department</button>
+      </div>
     </form>
   );
 };

@@ -9,6 +9,7 @@ interface CompanySelectProps {
 const CompanySelect: React.FC<CompanySelectProps> = ({ companies, selectedCompanyId, onChange }) => {
   return (
     <select
+    className="select-box select-container" // Apply the class for styling
       value={selectedCompanyId || ''}
       onChange={(e) => onChange(Number(e.target.value))}
     >

@@ -218,6 +218,25 @@ const CompaniesPage: React.FC = () => {
         onChange={setSelectedSpecializationId}
       />
       <ColleaguesTable colleagues={filteredColleagues} />
+      
+      <style>
+        {`
+          .companies-page {
+            text-align: center;
+            padding: 20px;
+          }
+
+          .select-container {
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 12px;
+            width: 400px;
+            display: block;
+            text-align: center;
+          }          
+        `}
+      </style>
+
     </div>
   );
 };
