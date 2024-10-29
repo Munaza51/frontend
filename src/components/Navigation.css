@@ -1,17 +1,20 @@
 .navbar {
-  background-color: #463b55; /* Rich purple background */
-  padding: 1rem;
-  color: #fff;
+  padding: 1rem 2rem;
+  color: #2f2e2e;
   display: flex;
-  justify-content: center; /* Center the navbar content horizontally */
-  align-items: center; /* Center the content vertically */
-  flex-direction: column; /* Stack the heading and links */
+  justify-content: space-between; /* Space out the header and links */
+  align-items: center;
+  background: transparent;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
 }
 
 .navbar h2 {
   margin: 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #555;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #171717;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* 3D shadow effect */
 }
 
 .nav-links {
@@ -19,8 +22,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1rem;
-  justify-content: center; /* Center the links */
+  gap: 1.5rem; /* Increase gap for more space */
 }
 
 .nav-links li {
@@ -29,13 +31,73 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #ddd;
+  color: #171717;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  border-radius: 8px;
+  background: rgba(106, 5, 114, 0.05);
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 3D shadow for depth */
+  transform: perspective(500px) translateZ(0); /* Start with a flat look */
 }
 
 .nav-links a:hover {
-  background-color: #ae9fc2; /* Lighter purple on hover */
+  background-color: #c2baba; /* Soft pastel pink for hover */
+  color: #171717; /* Keep text in the primary theme color */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow for a pop effect */
+  transform: perspective(500px) translateZ(10px); /* 3D pop on hover */
+}
+
+.nav-select {
+  border: 2px solid #171717;
+  background: rgba(106, 5, 114, 0.05);
+  color: #171717;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+  outline: none;
+  appearance: none;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+}
+
+.nav-select:hover {
+  background: #f3d1f4; /* Subtle pastel pink for hover */
+  color: #171717;
+  border-color: #f3d1f4; /* Match border with background */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover */
+  transform: perspective(500px) translateZ(10px); /* Pop out effect on hover */
+}
+
+.nav-select:focus {
+  border-color: #171717;
+  background: #ffffff; /* Emphasize focus state */
+  box-shadow: 0 0 8px rgba(106, 5, 114, 0.3); /* Subtle focus shadow */
+  transform: perspective(500px) translateZ(5px); /* Slight pop on focus */
+}
+
+.fancy-button {
+  background: linear-gradient(135deg, #171717, #f3d1f4);
   color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* 3D shadow for depth */
+}
+
+.fancy-button:hover {
+  transform: perspective(500px) translateZ(15px) translateY(-3px); /* Pop out with upward movement */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  background: linear-gradient(135deg, #f3d1f4, #171717); /* Reverse gradient on hover */
+}
+
+.fancy-button:active {
+  transform: perspective(500px) translateZ(5px) translateY(2px); /* Depressed look on click */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }

@@ -113,7 +113,7 @@ const companies = [
             id: 9,
             name: "Web Development",
             colleagues: [
-              { id: 18, name: "Noah Baker", email: "noahbaker@amazon.com", age: 32 },
+              { id: 18, name: "Noah Baker", email: "noahbaker@amazon .com", age: 32 },
               { id: 19, name: "Ella Edwards", email: "ellaedwards@amazon.com", age: 30 }
             ]
           },
@@ -195,28 +195,30 @@ const CompaniesPage: React.FC = () => {
   return (
     <div>
       <h2>Manage Tech Companies</h2>
-      <CompanySelect
-        companies={companies}
-        selectedCompanyId={selectedCompanyId}
-        onChange={(id) => {
-          setSelectedCompanyId(id);
-          setSelectedDepartmentId(null);
-          setSelectedSpecializationId(null);
-        }}
-      />
-      <DepartmentSelect
-        departments={departments}
-        selectedDepartmentId={selectedDepartmentId}
-        onChange={(id) => {
-          setSelectedDepartmentId(id);
-          setSelectedSpecializationId(null);
-        }}
-      />
-      <SpecializationSelect
-        specializations={specializations}
-        selectedSpecializationId={selectedSpecializationId}
-        onChange={setSelectedSpecializationId}
-      />
+      <div className="select-container">
+        <CompanySelect
+          companies={companies}
+          selectedCompanyId={selectedCompanyId}
+          onChange={(id) => {
+            setSelectedCompanyId(id);
+            setSelectedDepartmentId(null);
+            setSelectedSpecializationId(null);
+          }}
+        />
+        <DepartmentSelect
+          departments={departments}
+          selectedDepartmentId={selectedDepartmentId}
+          onChange={(id) => {
+            setSelectedDepartmentId(id);
+            setSelectedSpecializationId(null);
+          }}
+        />
+        <SpecializationSelect
+          specializations={specializations}
+          selectedSpecializationId={selectedSpecializationId}
+          onChange={setSelectedSpecializationId}
+        />
+      </div>
       <ColleaguesTable colleagues={filteredColleagues} />
       
       <style>
@@ -230,9 +232,10 @@ const CompaniesPage: React.FC = () => {
             margin: 10px auto;
             padding: 10px;
             font-size: 12px;
-            width: 400px;
-            display: block;
-            text-align: center;
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }          
         `}
       </style>

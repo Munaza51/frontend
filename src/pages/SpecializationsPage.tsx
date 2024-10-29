@@ -1,31 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SpecializationForm from '../components/SpecializationForm';
-import { api } from '../api/api';
+
+// Initial data for specializations
+const specializationsData = [
+  { id: 1, name: "Natural Language Processing (NLP)" },
+  { id: 2, name: "Computer Vision" },
+  { id: 3, name: "Reinforcement Learning (RL)" },
+  { id: 4, name: "Cloud Infrastructure" },
+  { id: 5, name: "Cloud Security" },
+  { id: 6, name: "Microsoft Office Suite" },
+  { id: 7, name: "Business Solutions" },
+  { id: 8, name: "Enterprise Services" },
+  { id: 9, name: "Web Development" },
+  { id: 10, name: "App Development" },
+  { id: 11, name: "iOS Development" },
+  { id: 12, name: "App Development" }, // Note: Duplicate name, consider renaming
+];
 
 const SpecializationsPage: React.FC = () => {
-  const [specializations, setSpecializations] = useState<any[]>([]);
   const [selectedSpecialization, setSelectedSpecialization] = useState<any | null>(null);
-  const [companyId, setCompanyId] = useState<number | null>(null);
-  const [departmentId, setDepartmentId] = useState<number | null>(null);
+  const [companyId, setCompanyId] = useState<number | null>(1); // Default to Google
+  const [departmentId, setDepartmentId] = useState<number | null>(1); // Default to first department of Google
 
-  const fetchSpecializations = async () => {
-    try {
-      if (companyId && departmentId) {
-        const response = await api.get(`/companies/${companyId}/departments/${departmentId}/specializations`);
-        setSpecializations(response.data);
-      }
-    } catch (error) {
-      console.error('Error fetching specializations:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchSpecializations();
-  }, [companyId, departmentId]);
+  // Here we can filter specializations based on the selected company and department
+  // For this example, we'll just display all specializations
+  const specializations = specializationsData; // Use all specializations for demonstration
 
   const handleSave = () => {
-    fetchSpecializations();
-    setSelectedSpecialization(null);
+    // Logic to refresh specializations or handle saved specialization
+    setSelectedSpecialization(null); // Reset the selected specialization
   };
 
   return (
@@ -45,11 +48,9 @@ const SpecializationsPage: React.FC = () => {
               <td>{specialization.name}</td>
               <td>
                 <button onClick={() => setSelectedSpecialization(specialization)}>Edit</button>
-                <button onClick={async () => {
-                  if (companyId && departmentId) {
-                    await api.delete(`/companies/${companyId}/departments/${departmentId}/specializations/${specialization.id}`);
-                    fetchSpecializations();
-                  }
+                <button onClick={() => {
+                  // Logic to delete specialization (not implemented here)
+                  console.log(`Delete specialization with id: ${specialization.id}`);
                 }}>
                   Delete
                 </button>

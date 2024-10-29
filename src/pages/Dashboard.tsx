@@ -155,15 +155,16 @@ const companies = [
   },
 ];
 
+
 const Dashboard: React.FC = () => {
   return (
     <div style={{ textAlign: 'center' }}>
-      <h2>Dashboard</h2>
-      <p>
-        Welcome to the Tech Companies Dashboard! Here you can manage your companies, departments, specializations, and colleagues.
+      <h1 className="fade-in">Welcome to Tech Companies</h1>
+      <p className="slide-up">
+        from departments to colleagues.
       </p>
 
-      <h3>Company Overview</h3>
+      
       <div>
         <table>
           <thead>
@@ -197,54 +198,75 @@ const Dashboard: React.FC = () => {
         </table>
       </div>
 
-      <h3>Statistics</h3>
-      <div style={{
-          border: '1px solid #ccc',
-          padding: '20px',
-          borderRadius: '5px',
-          margin: '20px auto',
-          width: '20%',
-          backgroundColor: '#ae9fc2',
-        }}>
-        <p>Total Companies: {companies.length}</p>
-        <p>
-          Total Departments: {companies.reduce((total, company) => total + company.departments.length, 0)}
-        </p>
-        <p>
-          Total Specializations: {companies.reduce((total, company) => 
+      
+<div className="table-container"
+>
+  <table>
+    <thead>
+      <tr>
+        <th>Statistic</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Total Companies</td>
+        <td>{companies.length}</td>
+      </tr>
+      <tr>
+        <td>Total Departments</td>
+        <td>
+          {companies.reduce((total, company) => total + company.departments.length, 0)}
+        </td>
+      </tr>
+      <tr>
+        <td>Total Specializations</td>
+        <td>
+          {companies.reduce((total, company) => 
             total + company.departments.reduce((count, department) => 
               count + department.specializations.length, 0), 0)
           }
-        </p>
-        <p>
-          Total Colleagues: {companies.reduce((total, company) => 
+        </td>
+      </tr>
+      <tr>
+        <td>Total Colleagues</td>
+        <td>
+          {companies.reduce((total, company) => 
             total + company.departments.reduce((count, department) => 
               count + department.specializations.reduce((c, specialization) => 
                 c + specialization.colleagues.length, 0), 0), 0)
           }
-          </p>
-      </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-      <h3>Recent Activities</h3>
-      <div style={{
-          border: '1px solid #ccc',
-          padding: '20px',
-          borderRadius: '5px',
-          margin: '20px auto',
-          width: '20%',
-          backgroundColor: '#ae9fc2',
-        }}>
-        <ul style={{ listStyleType: 'none', padding: 0 }}>
-          <li>Created a new department for Google.</li>
-          <li>Updated the specialization for Microsoft.</li>
-          <li>Added a colleague to Amazon.</li>
-          <li>Deleted an old department from Apple.</li>
-        </ul>
-      </div>
+
+<div className="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Recent Activities</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Created a new department for Google.</td>
+      </tr>
+      <tr>
+        <td>Updated the specialization for Microsoft.</td>
+      </tr>
+      <tr>
+        <td>Added a colleague to Amazon.</td>
+      </tr>
+      <tr>
+        <td>Deleted an old department from Apple.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
       
-      {/* Add charts and other summary information here */}
-      {/* Example: You could integrate a chart library here, like Chart.js or Recharts */}
-      {/* <Chart data={chartData} /> */}
     </div>
   );
 };
