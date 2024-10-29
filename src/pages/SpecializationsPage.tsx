@@ -33,7 +33,7 @@ const SpecializationsPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Specializations</h2>
+      <h2 className="slide-up">Specializations</h2>
       <SpecializationForm onSave={handleSave} existingSpecialization={selectedSpecialization} companyId={companyId} departmentId={departmentId} />
       <table>
         <thead>

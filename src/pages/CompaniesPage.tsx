@@ -194,7 +194,7 @@ const CompaniesPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Manage Tech Companies</h2>
+      <h2 className="slide-up">Companies Details</h2>
       <div className="select-container">
         <CompanySelect
           companies={companies}

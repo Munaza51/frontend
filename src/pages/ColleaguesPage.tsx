@@ -44,7 +44,7 @@ const ColleaguesPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Colleagues</h2>
+      <h2 className="slide-up">Colleagues</h2>
       <ColleagueForm
         onSave={handleSave}
         existingColleague={selectedColleague}

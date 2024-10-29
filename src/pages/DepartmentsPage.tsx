@@ -40,7 +40,7 @@ const DepartmentsPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Departments</h2>
+      <h2 className="slide-up">Departments</h2>
       <DepartmentForm onSave={handleSave} existingDepartment={selectedDepartment} companyId={companyId} />
       <table>
         <thead>
