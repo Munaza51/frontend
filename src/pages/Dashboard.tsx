@@ -161,7 +161,8 @@ const Dashboard: React.FC = () => {
     <div style={{ textAlign: 'center' }}>
       <h1 className="fade-in">Welcome to Tech Companies</h1>
       <p className="slide-up">
-        from departments to colleagues.
+      Your comprehensive dashboard for exploring tech industry insights, 
+        from innovative departments to talented professionals.
       </p>
 
       

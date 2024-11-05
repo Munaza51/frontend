@@ -1,12 +1,19 @@
 .layout {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  perspective: 1000px;
+}
+
+.content {
+  transform-style: preserve-3d;
+  animation: contentFloat 1s ease-out;
+}
+
+@keyframes contentFloat {
+  from {
+    transform: perspective(1000px) translateZ(-100px);
+    opacity: 0;
   }
-  
-  .content {
-    flex: 1;
-    padding: 2rem;
-    overflow-y: auto;
+  to {
+    transform: perspective(1000px) translateZ(0);
+    opacity: 1;
   }
-  
+}
